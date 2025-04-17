@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: flex-start;
   position: relative;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .frame .div {
@@ -71,7 +73,7 @@
 
 .frame .div-3 {
   display: flex;
-  width: 1920px;
+  width: 100%; /* 기존: 1920px */
   height: 100px;
   align-items: center;
   justify-content: space-between;
@@ -79,9 +81,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-color: #ffffff80;
+  border-bottom: 1px solid #ffffff80;
 }
 
 .frame .div-4 {
@@ -109,6 +109,25 @@
   letter-spacing: 0;
   line-height: 40px;
   white-space: nowrap;
+}
+
+.frame .button {
+  display: inline-flex; /* flex인데 width 고정 제거 */
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  background-color: #539e61;
+  border-radius: 8px;
+  white-space: nowrap; /* 줄바꿈 방지 */
+  color: white; /* 텍스트 색상 */
+}
+
+.frame .button a {
+  color: white; /* 링크 색상 */
+  text-decoration: none;
+  font-family: "S-Core Dream-5Medium", Helvetica;
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .frame .div-5 {
@@ -166,18 +185,19 @@
   align-items: flex-start;
   justify-content: center;
   gap: 24px;
-  padding: 120px 240px;
+  padding: 120px 5%; /* 반응형 여백으로 변경 */
   position: relative;
   align-self: stretch;
   width: 100%;
-  flex: 0 0 auto;
   background-color: #ffffff;
 }
 
 .frame .div-6 {
   display: flex;
   flex-direction: column;
-  width: 1208px;
+  width: 100%; /* 고정 해제 */
+  max-width: 1208px; /* 최대 너비 제한 */
+  margin: 0 auto;
   align-items: flex-start;
   gap: 8px;
   padding: 8px;
@@ -278,14 +298,13 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 180px 360px;
+  padding: 180px 5%;
   position: relative;
   align-self: stretch;
   width: 100%;
-  flex: 0 0 auto;
   background-image: url(./img/frame-18.png);
   background-size: cover;
-  background-position: 50% 50%;
+  background-position: center;
 }
 
 .frame .start-building-a-new {
@@ -307,7 +326,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 109px 798px;
+  padding: 109px 5%; /* 기존: 798px 고정 패딩 → % 처리 */
   position: relative;
   align-self: stretch;
   width: 100%;

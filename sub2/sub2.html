@@ -8,6 +8,9 @@
   <body>
     <div class="frame">
       <div class="div">
+        <video class="video-background" src="img/sub2.mp4" autoplay muted loop playsinline></video>
+        <div class="video-overlay"></div>
+        <img src="img/speaker-off.png" class="unmute-icon" alt="Toggle Sound" />
         <div class="frame-wrapper">
           <div class="div-2">
             <p class="text-wrapper">Bring your dreams and skills to Korea!</p>
@@ -17,12 +20,17 @@
               so that you can work in a stable work environment<br />with an excellent company in Korea. We have a wide
               range of industries and job roles waiting<br />for your application.
             </p>
+            <div class="button">
+              <a href="mailto:thehoin7@gmail.com" style="text-decoration: none; color: inherit;">
+                <div class="text-wrapper-9">Talk to us</div>
+              </a>
+            </div>
           </div>
         </div>
         <div class="div-3">
           <div class="div-4">
             <img class="image" src="img/image-3.png" />
-            <div class="text-wrapper-2"><a href="../index.html" style="text-decoration: none; color: white;">Ho-In Language Center</a></div>
+            <div class="text-wrapper-2"><a href="../index.html" style="text-decoration: none; color: white;">The Ho-In Study Abroad Center</a></div>
           </div>
           <div class="div-5">
             <div class="text-wrapper-3"><a href="../sub/sub.html" style="text-decoration: none; color: white;">International Marriage</a></div>
@@ -57,13 +65,33 @@
       </div>
       <div class="find-opportunities-wrapper">
         <p class="find-opportunities">Find Opportunities<br />for Growth And Success<br />in Korea!</p>
+        <div class="button">
+          <a href="mailto:thehoin7@gmail.com">Talk to us</a>
+        </div>
       </div>
       <div class="the-ho-in-languase-wrapper">
         <p class="the-ho-in-languase">
-          The Ho-In Languase Center&nbsp;&nbsp;|&nbsp;&nbsp;대표이사 : 전종철<br /><br />Copyright © The Ho-in Language
-          Center, All rights reserved.
+          The Ho-In Study Abroad Center&nbsp;&nbsp;|&nbsp;&nbsp;대표이사 : 전철호&nbsp;&nbsp;|&nbsp;&nbsp;사업자등록번호 : 837-86-03529
+          <br /><br />전남 나주시 빛가람로 736, 104호(빛가람동)&nbsp;&nbsp;|&nbsp;&nbsp;TEL : 061-334-2700
+          <br /><br />Copyright © The Ho-In Study Abroad Center, All rights reserved.
         </p>
       </div>
     </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const video = document.querySelector(".video-background");
+        const icon = document.querySelector(".unmute-icon");
+    
+        if (video && icon) {
+          video.volume = 0.1;
+    
+          icon.addEventListener("click", () => {
+            video.muted = !video.muted;
+            icon.src = video.muted ? "img/speaker-off.png" : "img/speaker-on.png";
+          });
+        }
+      });
+    </script>
   </body>
 </html>
